@@ -1,11 +1,39 @@
 <hello name="{{ name }}"></hello>
 <nav>
-	<ul>
-		<li><a routerLink="/">Home</a></li>
-		<li><a routerLink="/youtubers">Youtubers</a></li>
-		<li><a routerLink="/add">Add one</a></li>
-	</ul>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/youtubers">Youtubers</a></li>
+    <li><a routerLink="/add">Add one</a></li>
+  </ul>
 </nav>
 
 <router-outlet></router-outlet>
-<!--<app-mycompo [youtubers]="youtubers" (likeIt)="likeIt($event)"></app-mycompo>-->
+
+<div class="card-container">
+  <div *ngFor="let joke of jokes" class="card">
+    <div class="head">
+      <div>
+        <p class="category {{ joke.category }}">{{ joke.category }}</p>
+        <p *ngIf="joke.type == 'single'">{{ joke.joke }}</p>
+        <p *ngIf="joke.type == 'twopart'">{{ joke.setup }}</p>
+      </div>
+      <div>
+        <input
+          *ngIf="joke.type == 'twopart'"
+          type="button"
+          (click)="showAnswer($event)"
+          value="Show"
+        />
+        <input
+          class="white"
+          type="button"
+          (click)="reloadJoke()"
+          value="Next"
+        />
+      </div>
+    </div>
+    <div class="answer" *ngIf="joke.type == 'twopart'">
+      <p class="no-display">{{ joke.delivery }}</p>
+    </div>
+  </div>
+</div>

@@ -68,4 +68,16 @@ export class YoutubersService {
   getList() {
     return this.youtubers;
   }
+
+  add(name: string, followers: number, description: string): void {
+    var id = this.youtubers[this.youtubers.length - 1].id;
+    var youtuber = {
+      id: id,
+      name: name,
+      followers: followers,
+      description: description
+    };
+
+    this.youtubers.push(youtuber);
+  }
 }

@@ -1,3 +1,7 @@
+.no-display {
+  display: none;
+}
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -45,4 +49,84 @@ nav li a:hover {
   color: rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.2rem 0.5rem;
+
+  border-radius: 5px;
+}
+
+.category.Dark {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.category.Programming {
+  background-color: rgba(0, 255, 0, 0.7);
+  color: black;
+}
+
+.category.Pun {
+  background-color: rgba(224, 187, 54, 0.7);
+  color: black;
+}
+
+.category.Christmas {
+  background-color: rgba(215, 40, 40, 0.7);
+  color: black;
+}
+.category.Misc {
+  background-color: rgba(59, 21, 227, 0.7);
+  color: white;
+}
+.category.Spooky {
+  background-color: rgba(216, 29, 229, 0.7);
+  color: rgb(0, 0, 0);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  width: 33%;
+
+  margin-top: 2rem;
+  padding: 0.1rem;
+}
+
+.card .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.card .head p {
+  margin: 0 0.5rem;
+}
+
+.card .head div input {
+  width: 100%;
+  margin: 0.1rem;
+}
+
+.card .head input[type="button"] {
+  margin: 0;
 }

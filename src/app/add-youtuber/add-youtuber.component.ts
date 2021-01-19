@@ -24,16 +24,7 @@ export class AddYoutuberComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(data): void {
-    this.youtubersService.youtubers.push({
-      id:
-        this.youtubersService.getList()[
-          this.youtubersService.getList().length - 1
-        ].id + 1,
-      name: data.name,
-      followers: data.followers,
-      description: data.description
-    });
-
+    this.youtubersService.add(data.name, data.followers, data.description);
     this.addForm.reset();
   }
 }
