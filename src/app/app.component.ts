@@ -68,4 +68,20 @@ export class AppComponent {
         "Ceux qui respectent le règlement ne le respectent pas correctement."
     }
   ];
+
+  likeIt(arg): boolean {
+    var e = arg.e;
+    var name = arg.name;
+
+    e.preventDefault();
+
+    var currentVal = (e.target as HTMLInputElement).value;
+
+    if (currentVal == "Like") (e.target as HTMLInputElement).value = "+1";
+    else (e.target as HTMLInputElement).value = "Like";
+
+    console.log("Like " + name);
+
+    return false;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-mycompo",
@@ -8,20 +8,14 @@ import { Component, Input, OnInit } from "@angular/core";
 export class MycompoComponent implements OnInit {
   @Input() youtubers;
 
+  @Output() likeIt = new EventEmitter();
+
   only100k: boolean;
 
   constructor() {}
   ngOnInit() {}
 
   show100kOnly(e): void {
-    //e.preventDefault();
     this.only100k = e.target.checked;
-    //return false;
-  }
-
-  likeIt(e, name): boolean {
-    e.preventDefault();
-    console.log("Like" + name);
-    return false;
   }
 }
