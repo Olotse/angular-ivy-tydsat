@@ -1,0 +1,15 @@
+<input id="100K" type="checkbox" (click)="show100kOnly($event)" />
+<label for="100K">Avec 100 000 abonnés minimum</label>
+
+<div class="card-container" *ngIf="youtubers != null && youtubers.length > 0">
+  <div
+    class="card"
+    *ngFor="let youtuber of youtubers"
+    *ngIf="(only100k && youtuber.followers > 100000) || !only100k"
+  >
+    <p>{{ youtuber.name }}</p>
+    <p class="align-right">{{ youtuber.followers }} abonnés</p>
+    <p>{{ youtuber.description }}</p>
+    <input type="button" (click)="likeIt($event, youtuber.name)" value="Like" />
+  </div>
+</div>
