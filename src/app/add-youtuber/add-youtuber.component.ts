@@ -2,10 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { YoutubersService } from "../youtubers.service";
 
-import { faJedi } from "@fortawesome/free-solid-svg-icons";
-import { faTag } from "@fortawesome/free-solid-svg-icons";
-import { faDiscourse } from "@fortawesome/free-brands-svg-icons";
-
 @Component({
   selector: "app-add-youtuber",
   templateUrl: "./add-youtuber.component.html",
@@ -13,10 +9,6 @@ import { faDiscourse } from "@fortawesome/free-brands-svg-icons";
 })
 export class AddYoutuberComponent implements OnInit {
   addForm;
-
-  faJedi = faJedi;
-  faTag = faTag;
-  faDiscourse = faDiscourse;
 
   constructor(
     private formBuilder: FormBuilder,

@@ -1,21 +1,18 @@
 <form [formGroup]="addForm" (ngSubmit)="onSubmit(addForm.value)">
 	<div class="field-container">
 		<p class="fa-root">
-			<fa-icon [icon]="faJedi" size="1x" [styles]="{'stroke': 'red'}"></fa-icon>
 		</p>
 		<input type="text" id="Name" formControlName="name" required />
 		<label for="Name">Name</label>
 	</div>
 	<div class="field-container">
 		<p class="fa-root">
-			<fa-icon [icon]="faTag" size="1x" [styles]="{'stroke': 'red'}"></fa-icon>
 		</p>
 		<input type="text" id="Followers" formControlName="followers" required />
 		<label for="Followers">Followers</label>
 	</div>
 	<div class="field-container">
 		<p class="fa-root">
-			<fa-icon [icon]="faTag" size="1x" [styles]="{'stroke': 'red'}"></fa-icon>
 		</p>
 		<textarea id="Description" formControlName="description" required></textarea>
 		<label for="Description">Followers</label>
