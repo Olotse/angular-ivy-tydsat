@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
@@ -13,6 +14,8 @@ import { AddYoutuberComponent } from "./add-youtuber/add-youtuber.component";
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
     RouterModule.forRoot([
       { path: "youtubers", component: MycompoComponent },
       { path: "add", component: AddYoutuberComponent }

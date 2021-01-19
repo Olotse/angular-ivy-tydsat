@@ -1,0 +1,150 @@
+/* Formulaires */
+
+form {
+  width: 90%;
+  text-align: left;
+}
+
+form fieldset {
+  border: none;
+}
+
+form .errormessage {
+  margin-bottom: 1rem;
+
+  padding: 0.5rem;
+
+  border: 1px solid red;
+  border-radius: 10px;
+
+  background-color: #ffdddd;
+}
+
+form .field-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+form.vertical .field-container {
+  width: 98%;
+  margin: 1rem auto 0;
+}
+
+form .button-container {
+  width: 98%;
+  margin: 1rem auto 0;
+
+  text-align: center;
+}
+
+.field-container * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Logos présents devant les champs du formulaire */
+.field-container .fa-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 1.8rem;
+  height: 1.8rem;
+
+  user-select: none;
+}
+
+.field-container .fa-root * {
+  max-width: 100%;
+  height: auto;
+}
+
+.field-container input,
+.field-container select,
+.field-container textarea {
+  display: block;
+
+  width: calc(100% - 2.2rem); /* fa-root width + margin-left */
+
+  margin-left: 0.2rem;
+  padding-top: 0.5rem;
+
+  box-sizing: content-box;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  line-height: 1.3rem;
+  color: #495057;
+
+  background-clip: padding-box;
+  background-color: transparent;
+
+  border: none;
+  border-bottom: 1px solid #ced4da;
+
+  border-radius: 0;
+  outline: 0;
+
+  box-shadow: none;
+
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Champ sélectionné */
+.field-container input:focus,
+.field-container select:focus,
+.field-container textarea:focus {
+  border-color: #007bff;
+}
+
+/* Texte présent dans les champs du formulaire */
+.field-container input + label,
+.field-container select + label,
+.field-container textarea + label {
+  position: absolute;
+  top: -0.2rem;
+  left: 2rem; /* fa-root width + field margin-left */
+
+  display: inline-block;
+
+  font-size: 1rem;
+  font-weight: 300;
+
+  color: #757575;
+
+  cursor: text;
+  user-select: none;
+
+  transform: translateY(12px);
+  transform-origin: 0 100%;
+
+  transition: transform 0.2s ease-out, color 0.2s ease-out;
+}
+
+/* Déplacement du texte quand le champ correspondant est sélectionné et/ou rempli */
+.field-container input:focus + label,
+.field-container input:valid + label,
+.field-container select:focus + label,
+.field-container select:valid + label,
+.field-container textarea:focus + label,
+.field-container textarea:valid + label {
+  top: -1rem;
+
+  font-size: 0.7rem;
+  color: #007bff;
+}
+
+.field-container input.error + label,
+.field-container select.error + label,
+.field-container textarea.error + label {
+  color: red;
+}
+
+@media screen and (max-width: 400px) {
+}
