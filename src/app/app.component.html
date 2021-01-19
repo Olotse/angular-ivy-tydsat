@@ -1,6 +1,11 @@
 <hello name="{{ name }}"></hello>
-<p>
-	Start editing to see some magic happen :)
-</p>
+<nav>
+	<ul>
+		<li><a routerLink="/">Home</a></li>
+		<li><a routerLink="/youtubers">Youtubers</a></li>
+		<li><a routerLink="/add">Add one</a></li>
+	</ul>
+</nav>
 
-<app-mycompo [youtubers]="youtubers" (likeIt)="likeIt($event)"></app-mycompo>
+<router-outlet></router-outlet>
+<!--<app-mycompo [youtubers]="youtubers" (likeIt)="likeIt($event)"></app-mycompo>-->

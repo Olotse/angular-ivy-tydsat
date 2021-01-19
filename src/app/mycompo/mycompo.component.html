@@ -7,7 +7,7 @@
 			<p>{{ youtuber.name }}</p>
 			<p class="align-right">{{ youtuber.followers }} abonnés</p>
 			<p>{{ youtuber.description }}</p>
-			<input type="button" (click)="likeIt.emit({ e: $event, name: youtuber.name })" value="Like" />
+			<input type="button" (click)="likeIt({ e: $event, name: youtuber.name })" value="Like" />
 			<div>
 			</div>
 		</div>

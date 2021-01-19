@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { YoutubersService } from "../youtubers.service";
 
 @Component({
   selector: "app-mycompo",
@@ -6,16 +7,31 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
   styleUrls: ["./mycompo.component.css"]
 })
 export class MycompoComponent implements OnInit {
-  @Input() youtubers;
-
-  @Output() likeIt = new EventEmitter();
-
+  youtubers;
   only100k: boolean;
 
-  constructor() {}
+  constructor(private youtubersService: YoutubersService) {
+    this.youtubers = youtubersService.getList();
+  }
   ngOnInit() {}
 
   show100kOnly(e): void {
     this.only100k = e.target.checked;
+  }
+
+  likeIt(arg): boolean {
+    var e = arg.e;
+    var name = arg.name;
+
+    e.preventDefault();
+
+    var currentVal = (e.target as HTMLInputElement).value;
+
+    if (currentVal == "Like") (e.target as HTMLInputElement).value = "+1";
+    else (e.target as HTMLInputElement).value = "Like";
+
+    console.log("Like " + name);
+
+    return false;
   }
 }
